@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif; */
+}
+
+body {
+    background: var(--transparent-white);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 15px;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    margin: 3rem auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+.card.sedan {
+    background: var(--bright-orange);
+    color: var(--bright-orange);
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.card.suv {
+    background: var(--dark-cyan);
+    color: var(--dark-cyan);
+}
+
+.card.luxury {
+    background: var(--very-dark-cyan);
+    color: var(--very-dark-cyan);
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+.img-container {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-family: "Big Shoulders Display", cursive;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--very-light-gray);
+}
+
+.body-text {
+    margin-bottom: 6rem;
+    color: var(--very-light-gray);
+    font-weight: lighter;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    background: var(--very-light-gray);
+    border-radius: 50px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: 0.2s ease-in;
+}
+
+.link:hover {
+    background: none;
+    border: 1px solid var(--very-light-gray);
+    color: var(--very-light-gray);
+}
+
+@media screen and (max-width: 970px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+    .body-text {
+        margin-bottom: 3rem;
+    }
+    .card.sedan {
+        border-top-right-radius: 0.8rem;
+        border-top-left-radius: 0.8rem;
+        border-bottom-left-radius: 0;
+    }
+    .card.card.luxury {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0.8rem;
+        border-bottom-left-radius: 0.8rem;
+    }
+}
